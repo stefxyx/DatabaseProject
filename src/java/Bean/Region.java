@@ -5,13 +5,27 @@
  */
 package Bean;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Wu
  */
-public class Region {
+@Entity
+public class Region implements Serializable {
+    
+    
+    @Column(name = "region_id")
+    @Id
     private int region_id;
+    
+    @Column(name = "region_name")
     private String region_name;
+    
+    @Column(name = "region_manager")
     private int region_manager;
 
     public int getRegion_id() {

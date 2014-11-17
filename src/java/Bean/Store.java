@@ -5,15 +5,31 @@
  */
 package Bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Wu
  */
+@Entity
 public class Store {
+    
+    @Column(name = "store_id")
+    @Id
     private int store_id;
-    private int addresss_id;
+    
+    @Column(name = "address_id")
+    private int address_id;
+    
+    @Column(name = "store_manager")
     private int store_manager;
+    
+    @Column(name = "salesperson_number")
     private int salesperson_number;
+    
+    @Column(name = "region_id")
     private int region_id;
 
     public int getStore_id() {
@@ -24,12 +40,12 @@ public class Store {
         this.store_id = store_id;
     }
 
-    public int getAddresss_id() {
-        return addresss_id;
+    public int getAddress_id() {
+        return address_id;
     }
 
-    public void setAddresss_id(int addresss_id) {
-        this.addresss_id = addresss_id;
+    public void setAddress_id(int address_id) {
+        this.address_id = address_id;
     }
 
     public int getStore_manager() {

@@ -5,17 +5,31 @@
  */
 package Bean;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
 /**
  *
  * @author Wu
  */
-public class Transaction {
+@Entity
+public class Transaction implements Serializable {
+    
+    @Column(name = "transaction_id")
+    @Id
     private int transaction_id;
+    
+    @Column(name = "transaction_date")
     private Timestamp transaction_date;
+    
+    @Column(name = "customer_id")
     private int customer_id;
+    
+    @Column(name = "salesperson_id")
     private int salesperson_id;
 
     public int getTransaction_id() {

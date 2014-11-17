@@ -5,14 +5,30 @@
  */
 package Bean;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Wu
  */
-public class Record {
+@Entity
+public class Record implements Serializable {
+    
+    @Column(name = "transaction_id")
+    @Id
     private int transaction_id;
+    
+    @Column(name = "product_id")
+    @Id
     private int product_id;
+    
+    @Column(name = "amout")
     private int amout;
+    
+    @Column(name = "price")
     private int price;
 
     public int getTransaction_id() {

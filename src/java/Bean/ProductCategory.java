@@ -5,12 +5,23 @@
  */
 package Bean;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Wu
  */
-public class ProductCategory {
+@Entity
+public class ProductCategory implements Serializable {
+    
+    @Column(name = "category_id")
+    @Id
     private int category_id;
+    
+    @Column(name = "category_name")
     private String category_name;
 
     public int getCategory_id() {

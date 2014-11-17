@@ -5,19 +5,41 @@
  */
 package Bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Wu
  */
+@Entity
 public class Employee {
+    
+    @Column(name = "employee_id")
+    @Id
     private int employee_id;
+    
+    @Column(name = "first_name")
     private String first_name;
+    
+    @Column(name = "last_name")
     private String last_name;
+    
+    @Column(name = "address_id")
     private int address_id;
+    
+    @Column(name = "jobtitle")
     private String jobtitle;
+    
+    @Column(name = "priviledge")
     private int priviledge;
+    
+    @Column(name = "store_id")
     private int store_id;
-    private String salaery;
+    
+    @Column(name = "salary")
+    private String salary;
 
     public int getEmployee_id() {
         return employee_id;
@@ -75,11 +97,11 @@ public class Employee {
         this.store_id = store_id;
     }
 
-    public String getSalaery() {
-        return salaery;
+    public String getSalary() {
+        return salary;
     }
 
-    public void setSalaery(String salaery) {
-        this.salaery = salaery;
+    public void setSalary(String salary) {
+        this.salary = salary;
     }
 }

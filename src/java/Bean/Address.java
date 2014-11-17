@@ -5,14 +5,32 @@
  */
 package Bean;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Wu
  */
-public class Address {
+@Entity
+public class Address implements Serializable {
+
+    @Column(name = "address_id")
+    @Id
     private int address_id;
+    
+    @Column(name = "city")
     private String city;
-    private String state;
+
+    @Column(name = "state_")
+    private String state_;
+    
+    @Column(name = "street")
+    private String street;
+
+    @Column(name = "zipCode")
     private String zipCode;
 
     public int getAddress_id() {
@@ -31,14 +49,6 @@ public class Address {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public String getZipCode() {
         return zipCode;
     }
@@ -46,4 +56,21 @@ public class Address {
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+
+    public String getState_() {
+        return state_;
+    }
+
+    public void setState_(String state_) {
+        this.state_ = state_;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+    
 }

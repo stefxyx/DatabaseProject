@@ -5,15 +5,29 @@
  */
 package Bean;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Wu
  */
-public class Customer {
+@Entity
+public class Customer implements Serializable {
 
+    @Column(name = "customer_id")
+    @Id
     private int customer_id;
+
+    @Column(name = "address_id")
     private int address_id;
+
+    @Column(name = "first_name")
     private String first_name;
+
+    @Column(name = "last_name")
     private String last_name;
 
     public int getCustomer_id() {
