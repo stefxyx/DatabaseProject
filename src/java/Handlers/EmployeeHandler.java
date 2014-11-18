@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Handler;
+package Handlers;
 import Bean.Employee;
 import Database.Handler;
 import java.util.List;

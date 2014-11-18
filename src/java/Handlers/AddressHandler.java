@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Handler;
+package Handlers;
 
 
 /**
@@ -11,10 +11,16 @@ package Handler;
  * @author Wu
  */
 public class AddressHandler {
-    static final AddressHandler addresshandler = new AddressHandler();
+    private static final AddressHandler addressHandler = new AddressHandler();
     
     private AddressHandler(){
     }
     
+    public static AddressHandler getAddressHandler(){
+        return addressHandler;
+    }
     
+    public Address getAddressById(int id){
+        Address address = Handler
+    }
 }

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Handler;
+package Handlers;
 
 /**
  *
  * @author Wu
  */
-public class ProductHandler {
+public class StoreHandler {
     
 }
