@@ -39,7 +39,7 @@ public class Handler<T> {
         }
     }
 
-    public static Handler getCustomerHandler() {
+    public static Handler getHandler() {
         return handler;
     }
 

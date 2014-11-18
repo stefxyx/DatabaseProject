@@ -5,6 +5,9 @@
  */
 package Handlers;
 
+import Bean.Address;
+import Database.Handler;
+
 
 /**
  *
@@ -21,6 +24,7 @@ public class AddressHandler {
     }
     
     public Address getAddressById(int id){
-        Address address = Handler
+        Address address = null;
+        return address;
     }
 }

@@ -23,10 +23,6 @@ public class EmployeeHandler {
     }
     
     public List<Employee> GetEmployeeByID(String [] array){
-        String sql = "sejlr = ?";
-        List<Employee> l = Handler.getCustomerHandler().searchQuery(sql, array, Employee.class);
-        int ret = Handler.getCustomerHandler().updateQuery(sql, array);
-        Handler.getCustomerHandler().insertQuery(sql, array);
-        return l;
+        return null;
     }
 }
