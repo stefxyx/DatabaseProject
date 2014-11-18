@@ -17,6 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -65,27 +66,30 @@ public class Handler<T> {
         }
     }
     
-    //insert
+    //insert -1 -> error else key
     public int insertQuery(String sql, String[] para) {
         PreparedStatement ps;
         int res = -1; //return result
         try {
             Connection c = DriverManager.getConnection(DbConfig.connectionString,
                     DbConfig.dbUserName, DbConfig.dbPassword);
-            ps = c.prepareStatement(sql);
+            ps = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             for (int i = 0; i <= para.length; i++) {
                 ps.setString(i + 1, para[i]);
             }
-            int result = ps.executeUpdate();
-            res = (result != 0) ? 1 : -1;
-            return res;
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            if(rs.next()){
+                res = rs.getInt(1);
+            }
+            return 0;
         } catch (SQLException ex) {
             System.out.printf("Handler updateQuery error:" + ex.getMessage());
             return res;
         }
     }
 
-    //update
+    //update 1 -> success -1 -> error
     public int updateQuery(String sql, String[] para) {
         PreparedStatement ps;
         int res = -1; //return result
@@ -105,7 +109,7 @@ public class Handler<T> {
         }
     }
 
-    //delete
+    //delete 1 -> success -1 -> error
     public int deleteQuery(String sql, String[] para) {
         PreparedStatement ps;
         int res = -1; //return result

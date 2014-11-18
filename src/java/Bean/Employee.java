@@ -20,11 +20,8 @@ public class Employee {
     @Id
     private int employee_id;
     
-    @Column(name = "first_name")
-    private String first_name;
-    
-    @Column(name = "last_name")
-    private String last_name;
+    @Column(name = "employee_name")
+    private String employee_name;
     
     @Column(name = "address_id")
     private int address_id;
@@ -49,20 +46,12 @@ public class Employee {
         this.employee_id = employee_id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getEmployee_name() {
+        return employee_name;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
-    }
-
-    public String getLast_name() {
-        return last_name;
-    }
-
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setEmployee_name(String employee_name) {
+        this.employee_name = employee_name;
     }
 
     public int getAddress_id() {
