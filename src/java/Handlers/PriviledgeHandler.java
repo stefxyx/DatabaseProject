@@ -10,5 +10,15 @@ package Handlers;
  * @author Wu
  */
 public class PriviledgeHandler {
+    public static PriviledgeHandler ph = new PriviledgeHandler();
+    
+    private PriviledgeHandler(){
+        
+    }
+    
+    public static PriviledgeHandler getPrivilegeHandler(){
+        return ph;
+    }
+    
     
 }
