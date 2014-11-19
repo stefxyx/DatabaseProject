@@ -15,19 +15,19 @@ import javax.persistence.Id;
  * @author Wu
  */
 @Entity
-public class Priviledge implements Serializable {
-    @Column(name = "priviledge_id")
+public class Privilege implements Serializable {
+    @Column(name = "privilege_id")
     @Id
-    private int priviledge_id;
+    private int privilege_id;
     @Column(name = "description")
     private String description;
 
-    public int getPriviledge_id() {
-        return priviledge_id;
+    public int getPrivilege_id() {
+        return privilege_id;
     }
 
-    public void setPriviledge_id(int priviledge_id) {
-        this.priviledge_id = priviledge_id;
+    public void setPrivilege_id(int privilege_id) {
+        this.privilege_id = privilege_id;
     }
 
     public String getDescription() {
